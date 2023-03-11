@@ -2,7 +2,7 @@ const express = require('express');
 const usersRouter = express.Router();
 
 const sqlite3 = require('sqlite3');
-const db = new sqlite3.Database(process.env.TEST_DATABASE || './database.sqlite');
+const db = new sqlite3.Database(process.env.TEST_DATABASE || './database/database.sqlite');
 
 usersRouter.param('userId', (req, res, next, userId) => {
   const sql = 'SELECT * FROM Users WHERE Users.id = $userId';
